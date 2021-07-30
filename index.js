@@ -154,7 +154,7 @@ renderStoreItems(storeItems)
 //   <button>Add to cart</button>
 // </li>
 
-const cartItemsList = [
+const cartItems = [
   {
     item: {
       id: "001-beetroot",
@@ -227,13 +227,11 @@ const cartItemsList = [
     quantity: 1
   },
 ]
-console.log("cartItemsList: ", cartItemsList)
-console.log("typeof: ", typeof cartItemsList)
+console.log("cartItemsList: ", cartItems)
+console.log("typeof: ", typeof cartItems)
 
 const cartItemListEl = document.querySelector(".cart--item-list")
 console.log("ul bridge: ", cartItemListEl)
-
-const cartItems = [];
 
 //add to cart fucntion()
 
@@ -251,12 +249,12 @@ function addToCart(storeItems, cartItems) {
 
   // I Don't Know What I'm Doing Here
 
-  addToCart(storeItem[0])
-  addToCart(storeItem[0])
-  addToCart(storeItem[1])
-  addToCart(storeItem[1])
-  cartItems.push(newCartItem);
-  console.log("updated cart item: ", cartItems)
+  // addToCart(storeItem[0])
+  // addToCart(storeItem[0])
+  // addToCart(storeItem[1])
+  // addToCart(storeItem[1])
+  // cartItems.push(newCartItem);
+  // console.log("updated cart item: ", cartItems)
 
   // 3.0 Do something with the data inside the function
   // 3.1 If data is an array use a for loop
@@ -269,7 +267,13 @@ function addToCart(storeItems, cartItems) {
 // 2.0 Call the function
 // 2.1 Give the function an argument
 // 2.2 Check it's correct with the console.log
-// addToCart(dataInput)
+
+addToCart(storeItems[0])
+addToCart(storeItems[0])
+addToCart(storeItems[1])
+addToCart(storeItems[1])
+cartItems.push(newCartItem);
+console.log("updated cart item: ", cartItems)
 
 // addToCart(storeItem[0])
 // console.log(storeItem)
@@ -280,3 +284,16 @@ function addToCart(storeItems, cartItems) {
 
 
 //create function for event listener
+
+function removeFromCart(storeItems, cartItems) {
+  console.log("inside remove from cart: ", removeFromCart);
+
+  for (let i = 0; i < cartItems.length; i++) {
+    const cartItem = cartItems[i];
+    console.log(cartItem);
+
+    if (cartItem.quantity > 1) {
+      cartItem.quantity = i--;
+    }
+  }
+}
