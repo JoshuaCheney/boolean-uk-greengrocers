@@ -294,6 +294,7 @@ function removeFromCart(storeItems, cartItems) {
 
     if (cartItem.quantity > 1) {
       cartItem.quantity = i--;
+      console.log("inside if: ", cartItem.quantity)
     }
   }
 }
